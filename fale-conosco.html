@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tudo sobre Google Glass</title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css" media="screen and (min-width:641px)">
+	<link rel="stylesheet" href="_css/form.css" media="screen and (min-width:641px)">
+	<link rel="shortcut icon" href="https://www.google.com/glass/start/assets/img/favicon.png">
+	<script language="javascript" src="_javascript/funcoes.js"></script>
+</head>
+<body>
+	<div id="interface">
+		<header id="cabecalho">
+			<hgroup>
+				<h1>Google Glass</h1>
+				<h2>A revolução do Google está chegando</h2>
+			</hgroup>
+
+			<figure>
+				<img id="icone" src="_imagens/glass-oculos-preto-peq.png"/>
+			</figure>
+		
+			<nav id="menu">
+				<h1>Menu Principal</h1>
+				<ul type="disc">
+					<li onmouseover="mudaFoto('home')" onmouseout="mudaFoto('contato')"><a href="index.html" target="_self">Home</a></li>
+					<li onmouseover="mudaFoto('especificacoes')" onmouseout="mudaFoto('contato')"><a href="specs.html" target="_self">Especificações</a></li>
+					<li onmouseover="mudaFoto('fotos')" onmouseout="mudaFoto('contato')"><a href="fotos.html" target="_self">Fotos</a></li>
+					<li onmouseover="mudaFoto('multimidia')" onmouseout="mudaFoto('contato')"><a href="multimidia.html" target="_self">Multimídia</a></li>
+					<li onmouseover="mudaFoto('contato')" onmouseout="mudaFoto('contato')"><a href="fale-conosco.html" target="_self">Fale conosco</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="corpo-full">
+			<article id="noticia-principal">
+				<header id="cabecalho-artigo">
+					<hgroup>
+						<h3>Fale Conosco > Contato</h3>
+						<h1>Formulário de Contato</h1>
+						<h2>por Leonardo Giagio</h2>
+						<h3 class="direita">Atualizado em 27/Julho/2020</h3>
+					</hgroup>
+				</header>	
+
+				<form method="POST" id="fContato" name="contact" netlify oninput="calc_total();">
+					<fieldset id="usuario">
+						<legend>Identificação do Usuário</legend>
+						<p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="40" placeholder="Nome Completo"></p>
+						<p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"></p>
+						<p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="exemplo@dominio.com"></p>
+						<fieldset id="sexo">
+							<legend>Sexo:</legend>
+								<input type="radio" name="tSexo" id="cMasc" checked><label for="cMasc">Masculino</label></br>
+								<input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label>
+						</fieldset>
+						<p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"></p>
+					</fieldset>
+					<fieldset id="endereco">
+					<legend>Endereço do Usuário</legend>
+						<p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav..."></p>
+						<p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999"></p>
+						<p><label for="cEst">Estado:</label>
+						<select name="tEst" id="cEst">
+							<optgroup label="Norte">
+								<option value="AC">Acre</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="PA">Pará</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="TO">Tocantins</option>
+							</optgroup>
+							<optgroup label="Nordeste">
+								<option value="AL">Alagoas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="MA">Maranhão</option>
+								<option value="PB">Paraíba</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="SE">Sergipe</option>
+							</optgroup>
+							<optgroup label="Centro-Oeste">
+								<option value="DF">Distrito Federal</option>
+								<option value="GO">Goiás</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+							</optgroup>
+							<optgroup label="Sudeste">
+								<option value="ES">Espírito Santo</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="SP">São Paulo</option>
+							</optgroup>
+							<optgroup label="Sul">
+								<option value="PR">Paraná</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="SC">Santa Catarina</option>
+							</optgroup>
+						</select></p>
+						<p><label for="cCid">Cidade:</label>
+						<input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade"></p>
+					</fieldset>
+					<fieldset id="mensagem">
+					<legend>Mensagem do Usuário</legend>
+						<p><label for="cUrg">Grau de Urgência:</label>
+						Max<input type="range" name="tUrg" id="cUrg" min="0" max="10">Max</p>
+						<p><label for="cMsg">Mensagem:</label>
+						<textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+					</fieldset>
+					<fieldset id="pedido">
+					<legend>Quero um Google Glass</legend>
+						<p><input type="checkbox" name="tPed" id="cPed" checked>
+							<label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+						<p><label for="cCor">Cor:</label>
+							<input type="color" name="tCor" id="cCor" value="#ffffff"></p>
+						<p><label for="cQtd">Quantidade:</label>
+							<input type="number" name="tQtd" id="cQtd" min="0" value="0" max="10000"></p>
+						<p><label for="cTot">Preço Total: R$</label>
+							<input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly></p>
+							<input type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png">
+					</fieldset>
+				</form>
+			</article>
+		</section>
+
+
+        <footer id="rodape">
+            <p>Copyright 2020 - by Leonardo Giagio</p>
+                <pre><p><a href="https://www.facebook.com/leonardo.giagio.3" target="_blank">Facebook</a> | <a href="https://twitter.com/xxtAlemao" target="_blank">Twitter</a></pre></pre>
+                
+        </footer>
+    </div>
+
+</body>
+</html>
